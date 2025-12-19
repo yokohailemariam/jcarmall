@@ -4,7 +4,6 @@ import { useState, useMemo, useEffect, useCallback } from "react";
 import { useRouter, useSearchParams, usePathname } from "next/navigation";
 import { CARS_DATA } from "@/features/cars/data";
 import SearchBar from "./search-bar";
-import MobileFilterSheet from "./filters/mobile-filter-sheet";
 import ViewToggle from "./view-toggle";
 import DesktopFilters from "./filters/desktop-fitler";
 import CarsGridOrList from "./filters/car-grid-list";

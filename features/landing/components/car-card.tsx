@@ -7,12 +7,14 @@ import { CarData } from "../type";
 import { formatPrice } from "@/lib/utils";
 import useEmblaCarousel from "embla-carousel-react";
 import { ChevronLeft, ChevronRight, Image as ImageIcon } from "lucide-react";
+import { useRouter } from "next/navigation";
 
 interface CarCardProps {
   car: CarData;
 }
 
 export function CarCard({ car }: CarCardProps) {
+  const router = useRouter();
   const [viewportRef, embla] = useEmblaCarousel();
   const hasControls = (car.images?.length ?? 0) > 1;
   const scrollPrev = React.useCallback(() => embla?.scrollPrev(), [embla]);
@@ -31,9 +33,10 @@ export function CarCard({ car }: CarCardProps) {
           <div className="flex h-full">
             {car.images?.length &&
               car.images.map((src, idx) => (
-                <div
+                <button
                   key={`${car.id}-${idx}`}
                   className="min-w-0 flex-[0_0_100%] relative h-full"
+                  onClick={() => router.push(`/cars/${car.id}`)}
                 >
                   <Image
                     src={src || "/placeholder.svg"}
@@ -42,7 +45,7 @@ export function CarCard({ car }: CarCardProps) {
                     className="object-cover"
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   />
-                </div>
+                </button>
               ))}
           </div>
         </div>

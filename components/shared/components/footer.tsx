@@ -1,18 +1,24 @@
 import Link from "next/link";
-import { MapPin, Phone, Mail } from "lucide-react";
+import { MapPin, LucidePhone, MailIcon } from "lucide-react";
+import Image from "next/image";
 
 export function Footer() {
   return (
-    <footer className="bg-[#3d2b1f] text-white">
+    <footer className="bg-linear-to-r from-yellow-950 to-zinc-900 text-white py-16 relative overflow-hidden">
+      <div className="absolute top-0 left-0 w-64 h-64 bg-white/5 rounded-full -translate-x-32 -translate-y-32"></div>
       <div className="container mx-auto px-4 py-12 md:py-16">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
           <div>
-            <div className="flex items-center gap-2 mb-4">
-              <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center">
-                <span className="text-black font-bold text-sm">JC</span>
-              </div>
-              <span className="text-xl font-semibold">Jcarmall</span>
-            </div>
+            <Link href="/" className="flex items-center gap-3">
+              <Image
+                src="/logo.png"
+                alt="JCARMALL Logo"
+                width={48}
+                height={48}
+                className="object-contain size-8"
+              />
+              <span className="text-2xl font-bold text-primary">JCARMALL</span>
+            </Link>
             <p className="text-gray-300 text-sm leading-relaxed">
               Your trusted partner for premium imported vehicles in Addis Ababa.
             </p>
@@ -59,35 +65,37 @@ export function Footer() {
           <div>
             <h3 className="text-lg font-semibold mb-4">Contact Info</h3>
             <ul className="space-y-3">
-              <li className="flex items-start gap-3">
+              <Link href="#" className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-gray-400 shrink-0 mt-0.5" />
                 <span className="text-gray-300 text-sm">
                   Piassa, Nudo building, AA, Office No. 407
                 </span>
-              </li>
+              </Link>
               <li className="flex items-center gap-3">
-                <Phone className="w-5 h-5 text-gray-400 flex-0" />
-                <a
+                <Link
                   href="tel:+251983188628"
-                  className="text-gray-300 hover:text-white transition-colors text-sm"
+                  className="flex items-start gap-3"
                 >
-                  +251 983188628
-                </a>
+                  <LucidePhone className="w-5 h-5 text-gray-400 shrink-0 mt-0.5" />
+                  <span className="text-gray-300 text-sm">+251 983188628</span>
+                </Link>
               </li>
               <li className="flex items-center gap-3">
-                <Mail className="w-5 h-5 text-gray-400 flex-0" />
-                <a
+                <Link
                   href="mailto:jcarmall@gmail.com"
-                  className="text-gray-300 hover:text-white transition-colors text-sm"
+                  className="text-gray-300 hover:text-white transition-colors text-sm flex gap-3"
                 >
-                  jcarmall@gmail.com
-                </a>
+                  <MailIcon className="w-5 h-5 text-gray-400 shrink-0 mt-0.5" />
+                  <span className="text-gray-300 text-sm">
+                    jcarmall@gmail.com
+                  </span>
+                </Link>
               </li>
             </ul>
           </div>
         </div>
 
-        <div className="border-t border-gray-700 mt-12 pt-6 flex flex-col md:flex-row justify-between items-center gap-4">
+        <div className="border-t border-white/10 mt-12 pt-6 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-gray-400 text-sm">
             © 2025 Jcarmall. All rights reserved.
           </p>

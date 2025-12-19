@@ -9,6 +9,7 @@ const featuredCarsData: CarData[] = [
     id: 6,
     images: [
       "https://jcarmall.r2.orpad.cc/jcarmall/uploads/products/1765398385439-BYD-TANG-L-EV-HESUCAR-2(1).png",
+      "https://jcarmall.r2.orpad.cc/jcarmall/uploads/products/1765398385439-BYD-TANG-L-EV-HESUCAR-2(1).png",
     ],
     name: "Tang L Light Green",
     brand: "Byd",
@@ -25,6 +26,7 @@ const featuredCarsData: CarData[] = [
   {
     id: 7,
     images: [
+      "https://jcarmall.r2.orpad.cc/jcarmall/uploads/products/1765398385439-tang-l-ev-auto-in-china-1(1).webp",
       "https://jcarmall.r2.orpad.cc/jcarmall/uploads/products/1765398385439-tang-l-ev-auto-in-china-1(1).webp",
     ],
     name: "Tang L Gray",
@@ -80,10 +82,7 @@ export function FeaturedCars() {
             </p>
           </div>
 
-          <Button
-            variant="outline"
-            className="self-start sm:self-auto rounded-full px-6 group bg-transparent"
-          >
+          <Button variant="customOutline">
             View All Cars
             <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
           </Button>

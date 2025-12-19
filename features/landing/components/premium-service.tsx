@@ -1,5 +1,4 @@
 import { Shield, DollarSign, Wrench, Headphones } from "lucide-react";
-import { Badge } from "@/components/ui/badge";
 import { ServiceCard } from "./service-card";
 
 const services = [
@@ -34,12 +33,7 @@ export function PremiumServices() {
     <section className="py-20 px-4 md:px-6 lg:px-8 bg-background">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <Badge
-            variant="outline"
-            className="mb-4 border-primary/20 bg-primary/5 text-primary font-medium px-4 py-1.5"
-          >
-            WHAT WE OFFER
-          </Badge>
+          <p className="text-primary py-3">WHAT WE OFFER</p>
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4 text-balance">
             Premium Services
           </h2>

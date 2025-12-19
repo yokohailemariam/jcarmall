@@ -8,3 +8,8 @@ export function cn(...inputs: ClassValue[]) {
 export const formatPrice = (price: number) => {
   return `Br ${price.toLocaleString()}`;
 };
+
+export const formatDistance = (value: number) => {
+  const formatter = new Intl.NumberFormat("en-US");
+  return `${formatter.format(value)} km`;
+};

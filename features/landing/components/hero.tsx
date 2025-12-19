@@ -7,9 +7,11 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Search, ChevronRight } from "lucide-react";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 export function Hero() {
   const [searchQuery, setSearchQuery] = useState("");
+  const router = useRouter();
 
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
@@ -61,7 +63,7 @@ export function Hero() {
             </div>
           </form>
 
-          <Button size="lg">
+          <Button size="lg" onClick={() => router.push("/cars")}>
             Explore Collection
             <ChevronRight className="ml-2 h-5 w-5" />
           </Button>
